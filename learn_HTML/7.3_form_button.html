@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form radio, checkbox</title>
+  </head>
+  <body>
+    <form action="/signup">
+      <!-- action = "서버 전송시 url(서버 명)""-->
+
+      <!-- check box . 중복 선택 가능-->
+      <fieldset>
+        <legend>좋아하는 과일 선택하기</legend>
+        <ul>
+          <li>
+            <label for="apple">사과</label>
+            <input id="apple" type="checkbox" value="apple" />
+          </li>
+          <li>
+            <label for="orange">오렌지</label>
+            <input id="orange" type="checkbox" value="orange" />
+          </li>
+          <li>
+            <label for="banana">바나나</label>
+            <input id="banana" type="checkbox" value="banana" />
+          </li>
+        </ul>
+      </fieldset>
+
+      <!-- radio . 중복 선택 불가. name을 동일하게 하여 그룹화해야함-->
+      <fieldset>
+        <legend>라디오</legend>
+        <ul>
+          <li>
+            <label for="apple">사과</label>
+            <input id="apple" name="fruit" type="radio" value="apple" />
+          </li>
+          <li>
+            <label for="orange">오렌지</label>
+            <input id="orange" type="radio" name="fruit" value="orange" />
+          </li>
+          <li>
+            <label for="banana">바나나</label>
+            <input id="banana" type="radio" value="banana" name="fruit" />
+          </li>
+        </ul>
+      </fieldset>
+
+      <!-- Textarea : 여러줄의 데이터 입력받기 가능
+      rows=행수, cols=열수-->
+      <fieldset>
+        <legend>자기소개서</legend>
+        <textarea cols="30" rows="10">자기소개 입력란 수정가능</textarea>
+      </fieldset>
+
+      <!-- Select : 여러 옵션 메뉴 제공. option 태그 사용 -->
+      <fieldset>
+        <legend>주문 상품을 선택해주세요</legend>
+        <li>
+          <select name="goods" id="goods" multiple>
+            <!-- multiful :여러 옵션 선택 가능-->
+            <option value="apple_5kg">사과 5kg</option>
+            <!-- "사과 5kg"이 보여지지만, 서버엔 "apple_5kg"로 전송-->
+            <option value="apple_10kg" selected>사과 10kg</option>
+            <!-- selected 속성 : default값 설정-->
+            <option value="apple_15kg">사과 15kg</option>
+            <option value="apple_20kg">사과 20kg</option>
+          </select>
+        </li>
+
+        <li>
+          <select name="goods" id="goods">
+            <option value="apple_5kg">사과 5kg</option>
+            <!-- "사과 5kg"이 보여지지만, 서버엔 "apple_5kg"로 전송-->
+            <option value="apple_10kg" selected>사과 10kg</option>
+            <!-- selected 속성 : default값 설정-->
+            <option value="apple_15kg">사과 15kg</option>
+            <option value="apple_20kg">사과 20kg</option>
+          </select>
+        </li>
+        <li>
+          <!--Datalist : 다양한 옵션 선택 가능 
+          / input과 같이 사용ㅇ - 선택 옵션 검색 가능-->
+          <label for="icecream_choice">아이스크림 맛을 선택하세요</label>
+          <input
+            list="icecream_flavors"
+            id="icecream_choice"
+            name="icecream_choice"
+          />
+          <datalist id="icecream_flavors">
+            <!-- list의 idsms input의 list와 동일하게 해야 연결됨-->
+            <option value="chocolate"></option>
+            <option value="coconut"></option>
+            <option value="strawberry"></option>
+            <option value="mint"></option>
+            <option value="vanila"></option>
+          </datalist>
+        </li>
+
+        <li>
+          <button>제출</button>
+          <button type="reset">초기화</button>
+          <button type="button" onclick="alert('clicked the button')">
+            버튼
+          </button>
+          <!-- 
+        type 
+        - submit : 서버로 양식데이터 제출 / default값
+        - reset : =<input type="reset">. 모든 입력 필드를 초기값으로 되돌림
+        - button : 기본 행동 x, 자바스크립트측 코드 명령 시 사용-->
+        </li>
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+<!-- 자세한 form tag는 MDN 사이트에서-->

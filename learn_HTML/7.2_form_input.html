@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form input</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <!-- 동일한 field끼리 묶기-->
+        <legend>개인정보</legend>
+        <!-- 요소의 캡션 정의 시 사용 *legend : 전설, 설명문, 범례-->
+        <ul>
+          <li>
+            <label for="tex"></label>
+            <input type="text" id="tex" value="readonly" readonly />
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input type="email" id="email" required />
+            <!--type email- email규칙에 맞는지 자동 확인-->
+            <!-- required : 필수 값 체크-->
+          </li>
+          <li>
+            <label for="tel">전화번호</label>
+            <input type="tel" id="tel" autofocus />
+            <!--type tel - tel에따른 유효성검사 / 모바일에서 자동으로 키패드 생성-->
+          </li>
+
+          <li>
+            <label for="url">URL</label>
+            <input type="url" id=url" placeholder="url을 입력해주세요"/>
+            <!--type url - 주소에따른 유효성검사-->
+          </li>
+
+          <li>
+            <label for="number">num</label>
+            <input
+              type="number"
+              id="number"
+              min="3"
+              max="10"
+              value="비활성화됨"
+              disabled
+            />
+            <!--type number : 숫자만 입력 가능 /최소.최댓값 입력가능(3이상 10이하)-->
+          </li>
+          <li>
+            <label for="range">range</label>
+            <input type="range" id="range" required />
+            <!--type range : 범위값 입력 받음-->
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>날짜 단위</legend>
+        <ul>
+          <li>
+            <label for="date">Date</label>
+            <input type="date" id="date" min="2021-07-20" max="2023-05-02" />
+            <!-- 년 월 일 입력 가능-->
+            <br />
+            <!-- li tag는 정렬되지 않은 값 표시, 보통 bullet(글머리 기호)로 나열됨
+            묶어서 작성 시 같은 값으로 인식 -> 글머리 기호로 나뉘어지지 않음-->
+            <label for="month">month</label>
+            <input type="month" id="month" />
+            <!-- 년 월 까지 입력 가능 -->
+          </li>
+
+          <li>
+            <label for="week">week</label>
+            <input type="week" id="week" />
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>시간 단위</legend>
+        <ul>
+          <li>
+            <!-- for과 id는 맘대로 지정 가능 대신 동일하게-->
+            <label for="time">time</label>
+            <input type="time" id="time" min="08:30" max="16:50" />
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>그 외</legend>
+        <ul>
+          <li>
+            <input type="file" multiple />
+            <!-- 파일 선택기능 , 다중 선택 설정 가능-->
+          </li>
+          <li>
+            <input type="hidden" name="" id="" />
+            <!-- 서버로 값이동시 사용. 표시되진 않음-->
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <input type="submit" value="제출" />
+      </fieldset>
+    </form>
+  </body>
+</html>
